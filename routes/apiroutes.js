@@ -27,14 +27,23 @@ module.exports = function(app) {
     //overwrite the db.json with the new array
     
     //For some reason this will NOT take the double dots, single dot only for writing.
-    // fs.writeFile("./db/db.json", function(err) {
-    //     if (err) throw err;
-    //     console.log("Wow! It's Appended!");
-    //   });
+    fs.writeFileSync("./db/db.json", JSON.stringify(fileContent));
+
   });
 
   app.delete("/api/notes/:id", function(req, res){
     //Should receive a query parameter containing the id of a note to delete. This means you'll need to find a way to give each note a unique `id` when it's saved. In order to delete a note, you'll need to read all notes from the `db.json` file, remove the note with the given `id` property, and then rewrite the notes to the `db.json` file.
-    console.log("delete -- " + req.body);
+    
+    //parse the current db.json into an array of objects
+    let fileContent = JSON.parse(fs.readFileSync("./db/db.json"));
+
+    //iterate over each one with a FOR loop to find the index of the one with the id passed.
+
+    //use splice to remove that from the array
+
+    //update fileContent to the post-splice array
+
+    //write fileContent to the json file.
+    fs.writeFileSync("./db/db.json", JSON.stringify(fileContent));
   })
 }
