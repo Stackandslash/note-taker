@@ -17,9 +17,9 @@ module.exports = function(app) {
         title: req.body.title,
         body: req.body.body,
     }
-    newNote.id = uuid.v4("aa","3bbcee75-cecc-5b56-8031-b6641c1ed1f1"); //We need to actually make this something random instead. Maybe even just a weak random number or whatever.
+    newNote.id = uuid.v4(); //We need to actually make this something random instead. Maybe even just a weak random number or whatever.
     //Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.
-    
+    console.log(newNote);
     //parse the current db.json into an array of objects
     let fileContent = JSON.parse(fs.readFileSync("./db/db.json"));
     //push the newNote into the end
