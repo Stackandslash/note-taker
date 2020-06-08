@@ -17,7 +17,7 @@ This is a simple note-taking app, with the front-facing interface already pre-co
 * The user can create a new note and save by using the appropriate icon. At the moment, editing does not appear to be directly supported.
 
 
-### Issues
+### Tests
 The program is largely a simple one, so outside display issues and call/delete problems, opportunities for failure are limited.
 
 * Text content is not restricted. This could be troublesome for integrity, so exercise caution when in use.
