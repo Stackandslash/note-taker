@@ -3,7 +3,7 @@
 #### Description
 A generator for for creating a set of cards with team member details, using the terminal.
 
-![image one](./assets/image1.PNG)
+![image one](./image1.PNG)
 
 ## Table of Contents
 #### [Details](#details)
