@@ -15,7 +15,7 @@ module.exports = function(app) {
   app.post("/api/notes", function(req, res) {
     let newNote = {
         title: req.body.title,
-        body: req.body.body,
+        text: req.body.text,
     }
     newNote.id = uuid.v4(); //We need to actually make this something random instead. Maybe even just a weak random number or whatever.
     //Should receive a new note to save on the request body, add it to the `db.json` file, and then return the new note to the client.

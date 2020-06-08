@@ -8,7 +8,7 @@ var PORT = 8080;
 // We need both of these to parse data properly.
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(express.static("public")); //Automatically sets up routing for static assets
 
 //This is where we put all our get, post, and delete routing.
 require("./routes/apiroutes")(app);
