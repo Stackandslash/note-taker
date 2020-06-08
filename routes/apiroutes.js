@@ -36,14 +36,16 @@ module.exports = function(app) {
     
     //parse the current db.json into an array of objects
     let fileContent = JSON.parse(fs.readFileSync("./db/db.json"));
-
+    let deleteId = req.params.id;
+    console.log(fileContent.length);
     //iterate over each one with a FOR loop to find the index of the one with the id passed.
-
-    //use splice to remove that from the array
-
-    //update fileContent to the post-splice array
-
-    //write fileContent to the json file.
-    fs.writeFileSync("./db/db.json", JSON.stringify(fileContent));
+    for (let i = 0; i < fileContent.length; i++) {
+      if (fileContent[i].id === deleteId){
+        //use splice to remove that from the array
+        fileContent.splice(i, 1);
+        //write fileContent to the json file.
+        fs.writeFileSync("./db/db.json", JSON.stringify(fileContent));
+      }
+    }
   })
 }
